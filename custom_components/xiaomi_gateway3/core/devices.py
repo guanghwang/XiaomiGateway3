@@ -1759,7 +1759,27 @@ DEVICES += [{
         BaseConv("timestamp", mi="5.e.1006.p.1"),
     ],
     # "ttl": "25h"
-}, {
+}, {                                                          
+    12934: ["Xiaomi", "Door Lock E20 WIFI", "XMZNMS201LM", "lumi.lock.mcn008"],
+    "spec": [
+        BaseConv("action", "sensor"), 
+        MapConv("door", "sensor", mi="3.p.1021", map={1: "locked", 2: "unlocked", 3: "timeout", 4: "ajar"}),
+        BaseConv("battery", "sensor", mi="4.p.1003"),
+        # lock action
+        BaseConv("action_id", mi="2.e.1020.p.3"),
+        MapConv("action", mi="2.e.1020.p.3", map={1: "lock", 2: "unlock", 3: "lock_outside", 4: "lock_inside", 5: "unlock_inside", 6: "enable_child_lock", 7: "disable_child_lock", 8: "enable_away", 9: "disable_away"}),
+        BaseConv("key_id", mi="2.e.1020.p.1"),
+        BaseConv("method_id", mi="2.e.1020.p.5"),
+        MapConv("method", mi="2.e.1020.p.5", map={1: "mobile", 2: "fingerprint", 3: "password", 4: "nfc", 8: "key", 9: "one_time_password", 10: "periodic_password", 12: "coerce", 15: "manual"}),
+        MapConv("position", mi="2.e.1020.p.6", map={1: "indoor", 2: "outdoor", 3: "not tell indoor or outdoor"}),
+        BaseConv("timestamp", mi="2.e.1020.p.2"),                       
+        # doorbell action                                       
+        ConstConv("action", mi="5.e.1006", value="doorbell"),
+        BaseConv("timestamp", mi="5.e.1006.p.1"),                      
+    ],                                                                        
+    # "ttl": "25h"                      
+            
+            {
     # https://github.com/AlexxIT/XiaomiGateway3/issues/973
     10249: ["Xiaomi", "Door Lock E10", "XMZNMS01OD", "oms.lock.dl01"],
     "spec": [
