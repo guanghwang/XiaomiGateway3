@@ -1777,9 +1777,8 @@ DEVICES += [{
         ConstConv("action", mi="5.e.1006", value="doorbell"),
         BaseConv("timestamp", mi="5.e.1006.p.1"),                      
     ],                                                                        
-    # "ttl": "25h"                      
-            
-            {
+    # "ttl": "25h"                           
+}, {
     # https://github.com/AlexxIT/XiaomiGateway3/issues/973
     10249: ["Xiaomi", "Door Lock E10", "XMZNMS01OD", "oms.lock.dl01"],
     "spec": [
